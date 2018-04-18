@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, ActivityIndicator, StyleSheet, Image,
         TextInput, TouchableOpacity, Text, Button,
         KeyboardAvoidingView,
-        TouchableWithoutFeedback, Keyboard, AppRegistry, Header } from 'react-native';
+        TouchableWithoutFeedback, Keyboard, Header } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import CobaDrawer from './CobaDrawer';
 import Loader from './Loader';
@@ -22,7 +22,7 @@ import Loader from './Loader';
       <View style={styles.logoContainer}>
       <Image
       style={styles.logo}
-      source={require('./bem.png')}
+      source={require('../img/bemicon.png')}
       />
       </View>
         <Text style={styles.title}> Selamat Datang di App Anggota BEM FTK </Text>
@@ -41,6 +41,7 @@ import Loader from './Loader';
       />
 
       <Button
+            style={styles.buttonText}
             title='LOGIN'
             color="#ADD8E6"
             onPress={() => this.props.navigation.navigate('Details')}
@@ -94,7 +95,8 @@ const styles = StyleSheet.create({
     flex: 20,
   },
   container: {
-  padding: 30
+  padding: 30,
+  flex: 6
   },
   container1: {
     flex: 1,
@@ -107,12 +109,13 @@ const styles = StyleSheet.create({
 
   },
   logo: {
-    width: 300,
-    height: 300
+    width: 200,
+    height: 200,
+    justifyContent: 'center'
   },
   title: {
     color: '#2C3E50',
-    marginTop: 10,
+    justifyContent: 'center',
     textAlign: 'center',
     opacity: 0.9,
     fontSize: 18,
@@ -123,18 +126,19 @@ input: {
   backgroundColor: 'rgba(255,255,255,0.2)',
   marginBottom: 10,
   color: '#2C3E50',
-  paddingHorizontal: 30
+  paddingHorizontal: 35,
+  borderRadius: 25
 },
 buttonContainer: {
   backgroundColor: '#2980b9',
-  paddingVertical: 30
+  paddingVertical: 30,
+  borderRadius: 25
 },
 buttonText: {
   textAlign: 'center',
   color: '#2C3E50',
-  fontWeight: '700'
+  fontWeight: '700',
+  borderRadius: 25
 }
 
 });
-
-AppRegistry.registerComponent('BUtton and handluing tpuche', () => LoginForm);

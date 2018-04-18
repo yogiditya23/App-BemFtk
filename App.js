@@ -4,12 +4,7 @@ import {
   StyleSheet,
   View
 } from 'react-native';
-//import PerkiraanCuaca from './src/Cuaca/PerkiraanCuaca';
-//import Header from './src/UTS/Header';
-//import Footer from './src/UTS/Footer';
-//import Weather from './src/Cuaca2/Weather';
-import MenuSamping from './SB/MenuSamping';
-import TabNavigator from './SB/bemftk/TabNavigator';
+
 import Expo from "expo";
 
 import LoginForm from './SB/bemftk/LoginForm';

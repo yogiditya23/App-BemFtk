@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StackNavigator } from 'react-navigation';
 import { Container, Content, Form, Button, Item, Input, Label, Picker, Icon, Title } from 'native-base';
 import { View, Image, AppRegistry, TextInput, Alert } from 'react-native';
+import EditScreen from './EditScreen';
 
 
 
@@ -18,10 +19,16 @@ export default class InputScreen extends React.Component {
       onValueChange(value: string) {
       this.setState({
         jurusan: value,
-        jabatan: value
-
       });
     }
+    onValueChange2(value: string) {
+    this.setState({
+      jabatan: value
+
+
+    });
+  }
+
    InputUsers = () => {
      const {nama} = this.state;
      const {nim} = this.state;
@@ -84,13 +91,10 @@ fetch('http://api.ifreethink.net/1515051020/insert.php', {
             <Label> Jabatan </Label>
             <Picker
               mode="dropdown"
-              placeholder="Jabatan"
-              placeholderStyle={{ color: '#bfc6ea' }}
-              placeholderIconColor="#007aff"
               iosIcon={< Icon name="ios-arrow-down-outline" />}
               style={{ width: undefined }}
               selectedValue={this.state.jabatan}
-              onValueChange={this.onValueChange.bind(this)}
+              onValueChange={this.onValueChange2.bind(this)}
             >
               <Picker.Item label="Departemen Minat dan Bakat" value="Departemen Minat dan Bakat" />
               <Picker.Item label="Departemen Sosial" value="Departemen Sosial" />
